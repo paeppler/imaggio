@@ -1,0 +1,9 @@
+<h1>Enter Flickr User ID</h1>
+
+<%= form_with(model: @static_page, method: 'get') do |f| %>
+
+  <%= f.label :user_id %>
+  <%= f.text_field :user_id %>
+
+  <%= f.submit %>
+<% end %>

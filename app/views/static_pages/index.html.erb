@@ -1,5 +1,11 @@
-<div><%#= p Rails.application.credentials.flickr %></div>
-
-
-<div><%= @flickr %></div>
-<div><%= @flickr.photos.getRecent %></div>
+<div>
+  <% if @user_id %>
+    <div><%= @user_id %>'s Posts</div>
+    <div> <%= link_to "Search another User's Posts", root_path %> </div>
+    <% @imaggios.each do |imaggio| %>
+        <img src="<%= Flickr.url_n(imaggio) %>"/>
+    <% end %>
+  <% else%>
+    <%= render 'form' %>
+  <% end%>
+</div>
